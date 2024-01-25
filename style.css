@@ -431,6 +431,7 @@ footer {
 .restaurant__menu__title__categorie {
   width: 100%;
   max-width: 604px;
+  font-weight: 300;
   margin: auto;
   position: relative;
 }
@@ -526,6 +527,10 @@ footer {
   right: 0;
   z-index: -1;
 }
+.nav__footer__link--light {
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
 
 @media (max-width: 1024px) {
   .mobile {
@@ -574,6 +579,7 @@ footer {
   .nav__footer__link {
     margin-left: 0 !important;
   }
+
   .nav__footer__link:nth-child(3) {
     margin-left: 25px !important;
   }
