@@ -36,6 +36,7 @@ header {
 .return {
   position: absolute;
   left: 17px;
+
   top: 24px;
 }
 
@@ -269,6 +270,19 @@ h3 {
   width: 100%;
   max-width: 21.25rem;
   height: 251px;
+  position: relative;
+}
+.restaurants-cards__card__news{
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: #008766;
+  background-color: #99E2D0;
+  padding: 5px;
+  border-radius: 5px;
+
+
 }
 
 .card__link {
@@ -431,7 +445,6 @@ footer {
 .restaurant__menu__title__categorie {
   width: 100%;
   max-width: 604px;
-  font-weight: 300;
   margin: auto;
   position: relative;
 }
@@ -458,44 +471,64 @@ footer {
 .dishe {
   background-color: var(--white);
   border-radius: 15px;
-  padding: 15px;
+  transition:all  0.33s ease-in-out;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   position: relative;
   gap: 5px;
   box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.54);
-
 }
-.dishe:hover{
-  
-  .dishe__checked{
-    background-color: #99E2D0;
-    width: 60px;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0px;
-    display: flex;
-    color: white;
-    align-items: center;
+
+.dishe__checked{
+  width: 0;
+  color: var(--white);
+  display: flex;
+  transition: all .33s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+}
+.dishe:hover .dishe__checked{
+  display: flex;
+  width: 60px;
+  color: white;
+  transition: all .33s ease-in-out;
+  animation: fadeIn .33s;
+  justify-content: center;
+  background-color:var(--Green);
+  border-radius: 0 15px 15px 0;
+  align-items: center;
     justify-content: center;
-    border-radius: 0 15px 15px 0;
-    opacity: 1;
-    transition: all .4s ease-in-out;
-    z-index: 1;
-  }
-
-  .dishe__price {
-    position: absolute;
-    bottom: 0px;
-    right: 76px;
-    font-family: "Roboto", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    transition: all .4s ease-out;
-  }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
+i.fa-solid.fa-circle-check {
+  display: none;
+  
+}
+
+.dishe:hover .dishe__checked i.fa-solid.fa-circle-check{
+  display: flex;
+  content: "\f058";
+  color: var(white);
+  
+}
+
+.dishe__group {
+  min-width: calc(95% - 60px);
+  transition:all  0.33s ease-in-out;
+  margin: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dishe:hover .dishe__group{
+  min-width: calc(85% - 60px);
+}
 .dishe__title {
   margin: 0 0;
   padding: 0 0;
@@ -511,26 +544,16 @@ footer {
   padding: 0 0;
 }
 
-.dishe__price {
-  position: absolute;
-  bottom: 0px;
-  right: 16px;
+
+.dishe__price{
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 700;
+  margin: 30px 15px 0 0;
+
 }
-.dishe__checked{
-  color: var(--white);
-  position: absolute;
-  width: 0;
-  opacity: 0;
-  right: 0;
-  z-index: -1;
-}
-.nav__footer__link--light {
-  font-weight: 300;
-  font-family: 'Roboto', sans-serif;
-}
+
+
 
 @media (max-width: 1024px) {
   .mobile {
@@ -579,7 +602,6 @@ footer {
   .nav__footer__link {
     margin-left: 0 !important;
   }
-
   .nav__footer__link:nth-child(3) {
     margin-left: 25px !important;
   }
