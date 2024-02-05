@@ -36,6 +36,7 @@ header {
 .return {
   position: absolute;
   left: 17px;
+
   top: 24px;
 }
 
@@ -271,19 +272,17 @@ h3 {
   height: 251px;
   position: relative;
 }
-
-p.restaurants-cards__card__news {
+.restaurants-cards__card__news{
   position: absolute;
   top: 0;
   right: 15px;
-  border-radius: 5px;
-  padding: 7px;
-  background-color: var(--Green);
-  font-weight: 500;
-  font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #008766;
-  z-index: 1;
+  background-color: #99E2D0;
+  padding: 5px;
+  border-radius: 5px;
+
+
 }
 
 .card__link {
@@ -411,7 +410,7 @@ footer {
 }
 
 .restaurant__menu {
-  background-color: #f6f6f6;
+  background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
   width: 100%;
   max-width: 1055px;
@@ -455,7 +454,7 @@ footer {
   content: "";
   width: 40px;
   height: 3px;
-  background: #99e2d0;
+  background: #99E2D0;
   bottom: -12px;
   left: 0;
 }
@@ -472,14 +471,64 @@ footer {
 .dishe {
   background-color: var(--white);
   border-radius: 15px;
-  padding: 15px;
+  transition:all  0.33s ease-in-out;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   position: relative;
   gap: 5px;
   box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.54);
 }
 
+.dishe__checked{
+  width: 0;
+  color: var(--white);
+  display: flex;
+  transition: all .33s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+}
+.dishe:hover .dishe__checked{
+  display: flex;
+  width: 60px;
+  color: white;
+  transition: all .33s ease-in-out;
+  animation: fadeIn 1.33s;
+  justify-content: center;
+  background-color:var(--Green);
+  border-radius: 0 15px 15px 0;
+  align-items: center;
+    justify-content: center;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+i.fa-solid.fa-circle-check {
+  display: none;
+  
+}
+
+.dishe:hover .dishe__checked i.fa-solid.fa-circle-check{
+  display: flex;
+  content: "\f058";
+  color: var(white);
+  
+}
+
+.dishe__group {
+  min-width: calc(95% - 60px);
+  transition:all  0.33s ease-in-out;
+  margin: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dishe:hover .dishe__group{
+  min-width: calc(85% - 60px);
+}
 .dishe__title {
   margin: 0 0;
   padding: 0 0;
@@ -495,14 +544,16 @@ footer {
   padding: 0 0;
 }
 
-.dishe__price {
-  position: absolute;
-  bottom: 0px;
-  right: 16px;
+
+.dishe__price{
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 700;
+  margin: 30px 15px 0 0;
+
 }
+
+
 
 @media (max-width: 1024px) {
   .mobile {
