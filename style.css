@@ -256,6 +256,7 @@ h3 {
 .restaurants__title {
   max-width: 65rem;
   margin: 0 auto 25px;
+  padding: 0 20px;
 }
 
 .restaurants__cards {
@@ -477,6 +478,7 @@ footer {
   justify-content: space-between;
   position: relative;
   gap: 5px;
+  height: 72px;
   box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.54);
 }
 
@@ -522,8 +524,7 @@ i.fa-solid.fa-circle-check {
   min-width: calc(95% - 60px);
   transition:all  0.33s ease-in-out;
   margin: 15px;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  
 }
 
 .dishe:hover .dishe__group{
@@ -535,6 +536,9 @@ i.fa-solid.fa-circle-check {
   font-weight: 500;
   font-size: 18px;
   font-family: "Roboto", sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .dishe__component {
@@ -542,6 +546,9 @@ i.fa-solid.fa-circle-check {
   font-weight: 300;
   margin: 0 0;
   padding: 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
