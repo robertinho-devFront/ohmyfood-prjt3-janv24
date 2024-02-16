@@ -31,6 +31,8 @@ header {
   align-items: center;
   position: relative;
   justify-content: center;
+  background-color: var(--white);
+  z-index: 2;
 }
 
 .return {
@@ -68,57 +70,45 @@ header {
   color: var(--Grey2);
 }
 
-.accueil {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  font-family: "Roboto", sans-serif;
-}
 .container {
   position: absolute;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  animation: fadeOut 4s;
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut;
+  animation: fadeOut 3s;
+  animation-duration: 3s;
   opacity: 0;
- 
 }
-
 .bound {
   position: absolute;
   background-color: var(--white);
   height: 100vh;
   width: 100%;
-}
 
+}
 .lds-ring {
-  display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: purple;
+  background-color: var(--white);
 }
 .lds-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
+  width: 164px;
+  height: 164px;
+  margin: 18px;
+  border: 18px solid #fff;
   border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-ring 2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: purple transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
@@ -134,45 +124,39 @@ header {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
+
   }
 }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-    z-index: 2;
-  }
-  100% {
-    opacity: 0;
-    
-    animation: fadeOut 3s;
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut;
-    z-index: -2;
-    
-    display: none;
-  }
-}
-
 @keyframes fadeOut {
   0% {
     opacity: 1;
-    z-index: 2;
+    z-index: 3;
   }
+
+  90% {
+    opacity: 1;
+    z-index: 3;
+  }
+
   100% {
     opacity: 0;
     display: none;
-    animation: fadeOut 3s;
-    -webkit-animation-name: fadeOut;
     z-index: -2;
-    animation-name: fadeOut;
-    height: 0;
     background-color: var(--white);
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
 
+  100% {
+    opacity: 1;
+  }
+}
 .bound span {
   font-family: "roboto";
   position: absolute;
@@ -188,15 +172,13 @@ header {
   width: 100px;
   height: 100px;
 }
-
 h1 {
   font-family: "Shrikhand", serif;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 400;
   margin: 0 0;
   color: var(--Black);
 }
-
 h2 {
   font-family: "Roboto", sans-serif;
   color: var(--Black);
@@ -204,7 +186,6 @@ h2 {
   margin: 0 0;
   font-weight: 700;
 }
-
 h3 {
   color: var(--Black);
   font-family: "Roboto", sans-serif;
@@ -213,7 +194,6 @@ h3 {
   margin: 0 0;
   padding: 0 0;
 }
-
 .main-content__homepage {
   background-color: white;
   display: flex;
@@ -221,7 +201,6 @@ h3 {
   align-items: center;
   position: relative;
 }
-
 .welcome {
   display: flex;
   flex-direction: column;
@@ -233,7 +212,6 @@ h3 {
   width: 100%;
   z-index: 0;
 }
-
 .welcome__subtitle {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -242,11 +220,9 @@ h3 {
   margin: 0 0;
   padding: 0 0;
 }
-
 .mobile {
   display: none;
 }
-
 .btn__explore {
   display: flex;
   align-items: center;
@@ -259,12 +235,9 @@ h3 {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  background: var(
-    --Button-Gradient,
-    linear-gradient(-193deg, #9356dc -11.44%, #ff79da 123.93%)
-  );
+  background: var(--Button-Gradient,
+      linear-gradient(-193deg, #9356dc -11.44%, #ff79da 123.93%));
 }
-
 .btn__explore:hover {
   transition: all ease-in-out 0.33s;
   height: 50px;
@@ -275,15 +248,12 @@ h3 {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.15) 100%
-    ),
+      rgba(255, 255, 255, 0.15) 100%),
     linear-gradient(201deg, #9356dc -5.2%, #ff79da 110.74%);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
-
 .howtodo {
   display: flex;
   flex-direction: column;
@@ -291,13 +261,11 @@ h3 {
   max-width: 63rem;
   margin: 48px auto 68px;
 }
-
 .howtodo__title {
   text-align: left;
   padding: 0 20px;
   margin-bottom: 26px;
 }
-
 .howtodo__steps {
   display: flex;
   flex-direction: column;
@@ -306,7 +274,6 @@ h3 {
   width: 100%;
   gap: 24px;
 }
-
 .howtodo__steps__step {
   display: flex;
   flex-direction: row;
@@ -315,7 +282,6 @@ h3 {
   align-items: center;
   position: relative;
 }
-
 .howtodo__step__number {
   background-color: var(--purple);
   border-radius: 100%;
@@ -330,7 +296,6 @@ h3 {
   left: -12px;
   font-family: "Roboto", sans-serif;
 }
-
 .howtodo__step__texte {
   display: flex;
   flex-direction: row;
@@ -344,43 +309,37 @@ h3 {
   padding: 0 20px;
   width: 20rem;
 }
-
 .icones-grey {
   color: #7e7e7e;
   font-size: 18px;
   margin: 20px;
 }
-
 .icones-white {
   font-size: 12px;
   margin-right: 12px;
 }
-
 .icones-purple {
   color: var(--purple);
   font-size: 18px;
   margin: 20px;
 }
-
 .restaurants {
   background-color: var(--main-bg-color);
-  width: 100%;
   box-sizing: border-box;
   padding: 54px 0 66px;
+  width: 100%;
 }
-
 .restaurants__title {
-  max-width: 65rem;
+  max-width: 63rem;
   margin: 0 auto 25px;
+  width: 75%;
 }
-
 .restaurants__cards {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
 }
-
 .restaurants__cards__card {
   border-radius: 15px;
   width: 100%;
@@ -388,7 +347,6 @@ h3 {
   height: 251px;
   position: relative;
 }
-
 p.restaurants-cards__card__news {
   position: absolute;
   top: 0;
@@ -402,19 +360,16 @@ p.restaurants-cards__card__news {
   color: #008766;
   z-index: 1;
 }
-
 .card__link {
   display: flex;
   flex-direction: column;
 }
-
 .restaurants__card__img {
   height: 173px;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
-
 .restaurants__card__text {
   position: relative;
   background-color: var(--white);
@@ -423,7 +378,6 @@ p.restaurants-cards__card__news {
   padding: 15px;
   flex-direction: row;
 }
-
 .restaurants__card__title {
   display: flex;
   flex-direction: column;
@@ -436,34 +390,29 @@ p.restaurants-cards__card__news {
   font-weight: 300;
   margin: 0 0;
 }
-
-#Capa_1 {
-  font-size: 30px;
-  position: absolute;
-  bottom: 36px;
-  right: 25px;
-  width: 25px;
-  height: 25px;
-}
-
+// #Capa_1 {
+//   font-size: 30px;
+//   position: absolute;
+//   bottom: 36px;
+//   right: 25px;
+//   width: 25px;
+//   height: 25px;
+// }
 #heart {
   position: absolute;
   left: -100vw;
   width: 22px;
 }
-
 .control-group {
   margin: 3px;
   position: absolute;
   bottom: 23px;
   right: 0;
 }
-
 .red-heart-checkbox {
   visibility: hidden;
 }
-
-.red-heart-checkbox + label {
+.red-heart-checkbox+label {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -472,27 +421,22 @@ p.restaurants-cards__card__news {
   padding-left: 15px;
   transition: all 0.2s;
 }
-
-.red-heart-checkbox:checked + label:before {
+.red-heart-checkbox:checked+label:before {
   content: url("assets/img/Like0.svg");
 }
-
-.red-heart-checkbox + label:before {
+.red-heart-checkbox+label:before {
   content: "";
   position: absolute;
   margin-left: -48px;
   margin-top: 3px;
-  font-family: FontAwesome;
-  font-size: 22px;
-  content: url("assets/img/Like.png");
+  content: url("assets/img/Like.svg");
   transition: all 0.3s;
   color: #000;
 }
-
-.red-heart-checkbox + label:hover:before {
+.red-heart-checkbox+label:hover:before {
   transform: scale(1.2);
+  //content: url("assets/img/Like0.svg");
 }
-
 footer {
   background-color: var(--Grey2);
   display: flex;
@@ -502,29 +446,16 @@ footer {
   padding: 22px;
   box-sizing: border-box;
 }
-
-footer {
-  background-color: var(--Grey2);
-  display: flex;
-  flex-direction: column;
-  color: var(--white);
-  width: 100%;
-  padding: 22px;
-  box-sizing: border-box;
-}
-
 .footer__logo {
   color: var(--white);
   margin-bottom: 16px;
   font-size: 18px;
 }
-
 .nav__footer {
   display: flex;
   flex-direction: column;
   gap: 7px;
 }
-
 .nav__footer__link {
   display: flex;
   font-family: "Roboto", sans-serif;
@@ -532,14 +463,12 @@ footer {
   font-weight: 500;
   align-items: center;
 }
-
 .welcome__restaurant img {
   width: 100%;
   height: 260px;
   -o-object-fit: cover;
   object-fit: cover;
 }
-
 .restaurant__menu {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
@@ -554,32 +483,27 @@ footer {
   padding: 40px 15px;
   box-sizing: border-box;
 }
-
 .restaurant__menu__title {
   position: relative;
 }
-
 .restaurant__menu__title__texte {
   color: var(--Black, #101010);
   font-family: "Shrikhand", serif;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 400;
   margin-bottom: 40px;
 }
-
 .control-group-menu {
   position: absolute;
   right: -4rem;
   top: 8px;
 }
-
 .restaurant__menu__title__categorie {
   width: 100%;
   max-width: 604px;
   margin: auto;
   position: relative;
 }
-
 .restaurant__menu__title__categorie::after {
   position: absolute;
   content: "";
@@ -589,7 +513,6 @@ footer {
   bottom: -12px;
   left: 0;
 }
-
 .categories__dishes {
   gap: 12px;
   display: flex;
@@ -598,7 +521,6 @@ footer {
   max-width: 604px;
   margin: 24px auto 40px;
 }
-
 .dishe {
   background-color: var(--white);
   border-radius: 15px;
@@ -607,11 +529,10 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  gap: 5px;
   height: 72px;
   box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.54);
+  overflow: hidden;
 }
-
 .dishe__checked {
   width: 0;
   color: var(--white);
@@ -621,53 +542,35 @@ footer {
   justify-content: center;
   background-color: var(--white);
 }
-
 .dishe:hover .dishe__checked {
   display: flex;
   width: 60px;
   color: white;
   transition: all .33s ease-in-out;
-  animation: fadeIn 1.33s;
+  animation: fadeIn .33s;
   justify-content: center;
   background-color: var(--Green);
   border-radius: 0 15px 15px 0;
   align-items: center;
   justify-content: center;
 }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 i.fa-solid.fa-circle-check {
   display: none;
 
 }
-
 .dishe:hover .dishe__checked i.fa-solid.fa-circle-check {
   display: flex;
   content: "\f058";
   color: var(white);
-
 }
-
 .dishe__group {
-  min-width: calc(90% - 60px);
+  min-width: calc(92% - 85px);
   transition: all 0.33s ease-in-out;
   margin: 15px;
+  overflow: hidden;
 
 }
-
-.dishe:hover .dishe__group {
-  min-width: calc(100% - 24%);
-}
-
+.dishe:hover .dishe__group {}
 .dishe__title {
   margin: 0 0;
   padding: 0 0;
@@ -678,7 +581,6 @@ i.fa-solid.fa-circle-check {
   white-space: nowrap;
   overflow: hidden;
 }
-
 .dishe__component {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -688,8 +590,6 @@ i.fa-solid.fa-circle-check {
   white-space: nowrap;
   overflow: hidden;
 }
-
-
 .dishe__price {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
@@ -698,12 +598,19 @@ i.fa-solid.fa-circle-check {
 
 }
 
-
 @media (max-width: 1024px) {
   .mobile {
     display: flex;
   }
+  .howtodo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 63rem;
+    margin: 48px auto 68px;
+  }
 }
+
 @media (min-width: 1024px) {
   .howtodo__title {
     padding: 0 0;
@@ -714,6 +621,7 @@ i.fa-solid.fa-circle-check {
   }
   .restaurants {
     margin: 0 auto;
+    width: 100%;
   }
   .restaurants__cards {
     display: flex;
@@ -722,13 +630,13 @@ i.fa-solid.fa-circle-check {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    max-width: 65rem;
+    max-width: 63rem;
     margin: 0 auto;
   }
   .restaurants__cards__card {
     border-radius: 15px;
     width: 100%;
-    max-width: 30.625rem;
+    max-width: 29.625rem;
     height: 251px;
   }
   footer {
@@ -755,4 +663,4 @@ i.fa-solid.fa-circle-check {
     -o-object-fit: cover;
     object-fit: cover;
   }
-} /*# sourceMappingURL=style.css.map */
+}

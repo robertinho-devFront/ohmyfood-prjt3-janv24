@@ -31,6 +31,8 @@ header {
   align-items: center;
   position: relative;
   justify-content: center;
+  background-color: var(--white);
+  z-index: 2;
 }
 
 .return {
@@ -68,24 +70,14 @@ header {
   color: var(--Grey2);
 }
 
-.accueil {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  font-family: "Roboto", sans-serif;
-}
-
 .container {
   position: absolute;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  animation: fadeOut 4s;
-  animation-name: fadeOut;
+  animation: fadeOut 3s;
+  animation-duration: 3s;
   opacity: 0;
 }
 
@@ -97,28 +89,28 @@ header {
 }
 
 .lds-ring {
-  display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-family: "Roboto", sans-serif;
   color: purple;
+  background-color: var(--white);
 }
 
 .lds-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
+  width: 164px;
+  height: 164px;
+  margin: 18px;
+  border: 18px solid #fff;
   border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-ring 2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: purple transparent transparent transparent;
 }
 
@@ -145,17 +137,25 @@ header {
 @keyframes fadeOut {
   0% {
     opacity: 1;
-    z-index: 2;
+    z-index: 3;
+  }
+  90% {
+    opacity: 1;
+    z-index: 3;
   }
   100% {
     opacity: 0;
     display: none;
-    animation: fadeOut 3s;
-    -webkit-animation-name: fadeOut;
     z-index: -2;
-    animation-name: fadeOut;
-    height: 0;
     background-color: var(--white);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .bound span {
@@ -176,7 +176,7 @@ header {
 
 h1 {
   font-family: "Shrikhand", serif;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 400;
   margin: 0 0;
   color: var(--Black);
@@ -341,14 +341,15 @@ h3 {
 
 .restaurants {
   background-color: var(--main-bg-color);
-  width: 100%;
   box-sizing: border-box;
   padding: 54px 0 66px;
+  width: 100%;
 }
 
 .restaurants__title {
-  max-width: 65rem;
+  max-width: 63rem;
   margin: 0 auto 25px;
+  width: 75%;
 }
 
 .restaurants__cards {
@@ -415,15 +416,6 @@ p.restaurants-cards__card__news {
   margin: 0 0;
 }
 
-#Capa_1 {
-  font-size: 30px;
-  position: absolute;
-  bottom: 36px;
-  right: 25px;
-  width: 25px;
-  height: 25px;
-}
-
 #heart {
   position: absolute;
   left: -100vw;
@@ -460,25 +452,13 @@ p.restaurants-cards__card__news {
   position: absolute;
   margin-left: -48px;
   margin-top: 3px;
-  font-family: FontAwesome;
-  font-size: 22px;
-  content: url("assets/img/Like.png");
+  content: url("assets/img/Like.svg");
   transition: all 0.3s;
   color: #000;
 }
 
 .red-heart-checkbox + label:hover:before {
   transform: scale(1.2);
-}
-
-footer {
-  background-color: var(--Grey2);
-  display: flex;
-  flex-direction: column;
-  color: var(--white);
-  width: 100%;
-  padding: 22px;
-  box-sizing: border-box;
 }
 
 footer {
@@ -540,7 +520,7 @@ footer {
 .restaurant__menu__title__texte {
   color: var(--Black, #101010);
   font-family: "Shrikhand", serif;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 400;
   margin-bottom: 40px;
 }
@@ -585,9 +565,9 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  gap: 5px;
   height: 72px;
   box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.54);
+  overflow: hidden;
 }
 
 .dishe__checked {
@@ -605,7 +585,7 @@ footer {
   width: 60px;
   color: white;
   transition: all 0.33s ease-in-out;
-  animation: fadeIn 1.33s;
+  animation: fadeIn 0.33s;
   justify-content: center;
   background-color: var(--Green);
   border-radius: 0 15px 15px 0;
@@ -613,14 +593,6 @@ footer {
   justify-content: center;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 i.fa-solid.fa-circle-check {
   display: none;
 }
@@ -632,13 +604,10 @@ i.fa-solid.fa-circle-check {
 }
 
 .dishe__group {
-  min-width: calc(90% - 60px);
+  min-width: calc(92% - 85px);
   transition: all 0.33s ease-in-out;
   margin: 15px;
-}
-
-.dishe:hover .dishe__group {
-  min-width: 76%;
+  overflow: hidden;
 }
 
 .dishe__title {
@@ -673,6 +642,13 @@ i.fa-solid.fa-circle-check {
   .mobile {
     display: flex;
   }
+  .howtodo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 63rem;
+    margin: 48px auto 68px;
+  }
 }
 @media (min-width: 1024px) {
   .howtodo__title {
@@ -684,6 +660,7 @@ i.fa-solid.fa-circle-check {
   }
   .restaurants {
     margin: 0 auto;
+    width: 100%;
   }
   .restaurants__cards {
     display: flex;
@@ -692,13 +669,13 @@ i.fa-solid.fa-circle-check {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    max-width: 65rem;
+    max-width: 63rem;
     margin: 0 auto;
   }
   .restaurants__cards__card {
     border-radius: 15px;
     width: 100%;
-    max-width: 30.625rem;
+    max-width: 29.625rem;
     height: 251px;
   }
   footer {
@@ -725,4 +702,4 @@ i.fa-solid.fa-circle-check {
     -o-object-fit: cover;
     object-fit: cover;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
