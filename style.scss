@@ -390,14 +390,7 @@ p.restaurants-cards__card__news {
   font-weight: 300;
   margin: 0 0;
 }
-// #Capa_1 {
-//   font-size: 30px;
-//   position: absolute;
-//   bottom: 36px;
-//   right: 25px;
-//   width: 25px;
-//   height: 25px;
-// }
+
 #heart {
   position: absolute;
   left: -100vw;
@@ -423,6 +416,8 @@ p.restaurants-cards__card__news {
 }
 .red-heart-checkbox:checked+label:before {
   content: url("assets/img/Like0.svg");
+  animation: fadeIn 0.83s;
+  transition: all ease 0.83s;
 }
 .red-heart-checkbox+label:before {
   content: "";
@@ -430,12 +425,15 @@ p.restaurants-cards__card__news {
   margin-left: -48px;
   margin-top: 3px;
   content: url("assets/img/Like.svg");
-  transition: all 0.3s;
+  transition: all 0.83s;
   color: #000;
 }
 .red-heart-checkbox+label:hover:before {
-  transform: scale(1.2);
-  //content: url("assets/img/Like0.svg");
+  transform: scale(1.2) ;
+  animation: fadeIn 0.83s;
+  content: url("assets/img/Like0.svg");
+ 
+  
 }
 footer {
   background-color: var(--Grey2);
@@ -496,7 +494,7 @@ footer {
 .control-group-menu {
   position: absolute;
   right: -4rem;
-  top: 8px;
+  top: 0px;
 }
 .restaurant__menu__title__categorie {
   width: 100%;
