@@ -178,6 +178,7 @@ h1 {
   font-weight: 400;
   margin: 0 0;
   color: var(--Black);
+  cursor: pointer;
 }
 h2 {
   font-family: "Roboto", sans-serif;
@@ -418,6 +419,7 @@ p.restaurants-cards__card__news {
   content: url("assets/img/Like0.svg");
   animation: fadeIn 0.83s;
   transition: all ease 0.83s;
+  cursor:pointer;
 }
 .red-heart-checkbox+label:before {
   content: "";
@@ -427,6 +429,7 @@ p.restaurants-cards__card__news {
   content: url("assets/img/Like.svg");
   transition: all 0.83s;
   color: #000;
+  cursor:pointer;
 }
 .red-heart-checkbox+label:hover:before {
   transform: scale(1.2) ;
